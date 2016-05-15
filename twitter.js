@@ -10,10 +10,12 @@ var t = new twitter({
 
 t.stream(
 	'statuses/filter',
-	{ track: ['buckeyes'] },
+	//{ track: ['orioles'] },
+	// baltimore bbox
+	{'locations':'-76.71, 39.19, -76.52, 39.37'},
 	function(stream) {
 		stream.on('data', function(tweet) {
-			console.log(tweet);
+			console.log('tweet: ' + tweet.text);
 		});
 	}
 );
